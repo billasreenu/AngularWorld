@@ -2,10 +2,14 @@ pipeline {
     agent any 
      
     stages {
-	    stage('Prepare') { 
+	    stage('NpmInstall') { 
             steps { 
                 npm install
-                npm audit fix 
+            }
+        }
+		stage('NpmAuditFix') { 
+            steps { 
+                npm audit fix
             }
         }
         stage('Build') { 
