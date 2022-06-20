@@ -4,13 +4,13 @@ pipeline {
     stages {
 	    stage('Prepare') { 
             steps { 
-                sh 'npm install' 
-                sh 'npm audit fix' 
+                npm install
+                npm audit fix 
             }
         }
         stage('Build') { 
             steps { 
-                sh 'npm build' 
+                npm build
             }
         }
          
